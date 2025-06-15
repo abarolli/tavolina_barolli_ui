@@ -2,7 +2,6 @@
 
 import { usePathname } from "next/navigation";
 import styles from "@/app/page.module.css";
-import ConditionalCloserLink from "./ConditionalLink";
 
 export default function MainContent({
   children,
@@ -11,16 +10,8 @@ export default function MainContent({
 }>) {
   const pathname = usePathname();
 
-  const isHidden = pathname === "/";
-
   return (
-    <section
-      className={`${styles["main-section__content"]} ${
-        isHidden ? "hidden" : ""
-      }`}
-    >
-      <ConditionalCloserLink />
-
+    <section className={`${styles["main-section__content"]}`}>
       {children}
     </section>
   );
