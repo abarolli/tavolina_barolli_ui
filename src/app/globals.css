@@ -18,3 +18,27 @@ body {
   display: none;
   visibility: hidden;
 }
+
+.content__section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.content__section > * {
+  margin-bottom: 1rem;
+}
+
+.link {
+  width: fit-content;
+  text-decoration: none;
+  color: inherit;
+}
+
+.link--selected {
+  text-decoration: underline;
+}
