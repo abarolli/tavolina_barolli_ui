@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import styles from "@/app/page.module.css";
 import MainContent from "./ui/MainContent";
-import LinkWrapper from "./ui/LinkWrapper";
+import Controls from "./ui/Controls";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -58,18 +58,11 @@ export default function RootLayout({
           </header>
           <main className={styles["main"]}>
             <section className={styles["main-section"]}>
-              <div className={styles["main-section__controls"]}>
-                <LinkWrapper className="something" href="/menu">
-                  See the Menu
-                </LinkWrapper>
-                <LinkWrapper href="/reservation">
-                  Make a Reservation
-                </LinkWrapper>
-                <LinkWrapper href="/about">About Us</LinkWrapper>
-              </div>
+              <Controls />
               <MainContent>{children}</MainContent>
             </section>
           </main>
+          <footer className="footer">&copy; Tavolina Barolli</footer>
         </div>
       </body>
     </html>
