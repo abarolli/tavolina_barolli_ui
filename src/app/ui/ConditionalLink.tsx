@@ -19,7 +19,7 @@ export default function ConditionalCloserLink({
   return (
     <Link
       href="/"
-      className={`${className} ${styles["close-link"]} link ${
+      className={`${className ?? ""} ${styles["close-link"]} link ${
         isHidden ? "hidden" : ""
       }`}
     >
