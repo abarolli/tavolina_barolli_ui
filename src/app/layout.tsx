@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import styles from "@/app/page.module.css";
-import Link from "next/link";
 import MainContent from "./ui/MainContent";
-import ConditionalCloserLink from "./ui/ConditionalLink";
+import LinkWrapper from "./ui/LinkWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,7 +34,7 @@ export default function RootLayout({
             <h1 className={styles["home-page-title"]}>Tavolina Barolli</h1>{" "}
             <svg
               className={styles["decorative-page-title"]}
-              viewBox="0 0 150 200"
+              viewBox="0 0 150 40"
             >
               {/* anything inside "defs" is not rendered */}
               <defs>
@@ -60,16 +59,13 @@ export default function RootLayout({
           <main className={styles["main"]}>
             <section className={styles["main-section"]}>
               <div className={styles["main-section__controls"]}>
-                <Link href="/menu" className={styles["link"]}>
+                <LinkWrapper className="something" href="/menu">
                   See the Menu
-                </Link>
-                <Link href="/reservation" className={styles["link"]}>
+                </LinkWrapper>
+                <LinkWrapper href="/reservation">
                   Make a Reservation
-                </Link>
-                <Link href="/about" className={styles["link"]}>
-                  About Us
-                </Link>
-                <ConditionalCloserLink />
+                </LinkWrapper>
+                <LinkWrapper href="/about">About Us</LinkWrapper>
               </div>
               <MainContent>{children}</MainContent>
             </section>
