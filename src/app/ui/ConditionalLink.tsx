@@ -5,7 +5,13 @@ import { usePathname } from "next/navigation";
 
 import styles from "@/app/page.module.css";
 
-export default function ConditionalCloserLink() {
+type ConditionalCloserLinkProps = {
+  className?: string;
+};
+
+export default function ConditionalCloserLink({
+  className,
+}: ConditionalCloserLinkProps) {
   const pathname = usePathname();
 
   const isHidden = pathname === "/";
@@ -13,7 +19,7 @@ export default function ConditionalCloserLink() {
   return (
     <Link
       href="/"
-      className={`${styles["close-link"]} ${styles["link"]} ${
+      className={`${className} ${styles["close-link"]} link ${
         isHidden ? "hidden" : ""
       }`}
     >
